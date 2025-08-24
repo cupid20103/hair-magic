@@ -29,10 +29,18 @@ const AppScreen: React.FC = () => {
 
   const isDarkMode = colorScheme === "dark";
 
-  const uploadImage = async (mode: string) => {
+  const uploadImage = async (mode: "camera" | "gallery" | "remove") => {
     try {
       if (mode === "camera") {
-        await ImagePicker.requestCameraPermissionsAsync();
+        const { granted } = await ImagePicker.requestCameraPermissionsAsync();
+
+        if (!granted) {
+          toast({ message: "Camera permission is required." });
+
+          setModalVisible(false);
+
+          return;
+        }
 
         const result = await ImagePicker.launchCameraAsync({
           cameraType: ImagePicker.CameraType.front,
@@ -68,7 +76,7 @@ const AppScreen: React.FC = () => {
   };
 
   const handleImage = async () => {
-    if (isEmpty(selfie) || prompt.trim().length == 0 || isLoading) {
+    if (isEmpty(selfie) || prompt.trim().length === 0 || isLoading) {
       toast({ message: "Please upload an image and enter a prompt." });
 
       return;
@@ -103,7 +111,7 @@ const AppScreen: React.FC = () => {
     } catch (error) {
       toast({ message: "Failed to process image." });
 
-      console.log(error);
+      console.error(error);
     } finally {
       setIsLoading(false);
     }
@@ -256,13 +264,14 @@ const AppScreen: React.FC = () => {
                       key={index}
                       title={item.title}
                       image={item.image}
+                      onPress={() => setPrompt(item.title)}
                     />
                   ))}
                 </View>
               </View>
             ) : (
               <Text className="text-sm text-gray-500 text-center">
-                Your photo is processed securely for transformation only -- is
+                Your photo is processed securely for transformation only and is
                 not stored or shared.
               </Text>
             )}

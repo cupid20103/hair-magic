@@ -22,7 +22,7 @@ const RootLayout: React.FC = () => {
     <>
       <RootSiblingParent>
         <SafeAreaProvider>
-          <Slot screenOptions={{ headerShown: false }} />
+          <Slot />
         </SafeAreaProvider>
       </RootSiblingParent>
       <StatusBar style="auto" />

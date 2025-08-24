@@ -15,6 +15,7 @@ export interface UploadModalProps {
 export interface HairStyleProps {
   title: string;
   image: ImageRequireSource;
+  onPress?: () => void;
 }
 
 export interface SkeletonImageProps {

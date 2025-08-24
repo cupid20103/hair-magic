@@ -9,7 +9,7 @@ import Animated, {
 import { Image } from "expo-image";
 import { HairStyleProps } from "@/types/component";
 
-const HairStyle: React.FC<HairStyleProps> = ({ title, image }) => {
+const HairStyle: React.FC<HairStyleProps> = ({ image, onPress }) => {
   const scale = useSharedValue(1);
 
   const animatedStyle = useAnimatedStyle(() => {
@@ -35,7 +35,7 @@ const HairStyle: React.FC<HairStyleProps> = ({ title, image }) => {
   return (
     <Pressable
       className="flex-1 h-24 rounded-xl overflow-hidden"
-      onPress={() => console.log(title)}
+      onPress={onPress}
       onPressIn={onPressIn}
       onPressOut={onPressOut}
     >

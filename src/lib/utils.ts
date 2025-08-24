@@ -61,7 +61,7 @@ export const imageToBase64 = async (uri: string) => {
 };
 
 export const generateAPIURL = (relativePath: string) => {
-  const API_URL = " https://hair-magic.expo.app";
+  const API_URL = "https://hair-magic-mvp.expo.app";
 
   const origin =
     Constants?.experienceUrl?.replace("exp://", "http://") || API_URL;

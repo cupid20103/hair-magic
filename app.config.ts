@@ -22,7 +22,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       foregroundImage: "./src/assets/images/adaptive-icon.png",
       backgroundColor: "#ffffff",
     },
-    permissions: ["android.permission.RECORD_AUDIO"],
     package: "com.cupid20103.HairMagic",
   },
   web: {

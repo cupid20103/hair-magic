@@ -1,9 +1,5 @@
 import { REPLICATE_API_TOKEN } from "@/config/env";
 
-export function GET(request: Request) {
-  return Response.json({ hello: "world" });
-}
-
 export async function POST(req: Request) {
   try {
     const { input_image, prompt } = await req.json();
