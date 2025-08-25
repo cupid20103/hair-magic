@@ -1,4 +1,4 @@
-# 🎨 HairMagic - AI Hairstyle Changer
+# HairMagic - AI Hairstyle Changer
 
 HairMagic is a cross-platform mobile app built with **Expo** and **NativeWind** that uses **Replicate AI** to generate new hairstyles from a photo and a text prompt.
 
@@ -6,7 +6,7 @@ Upload a selfie, describe the hairstyle you want, and the app returns an AI-gene
 
 ---
 
-## 🚀 Features
+## Features
 
 - Built with **Expo (SDK 52)** and the **new React Native architecture**.
 - Styled with **NativeWind** (Tailwind CSS for React Native), including dark mode.
@@ -17,7 +17,7 @@ Upload a selfie, describe the hairstyle you want, and the app returns an AI-gene
 
 ---
 
-## 🧱 Tech Stack
+## Tech Stack
 
 | Area | Choice |
 | --- | --- |
@@ -31,7 +31,7 @@ Upload a selfie, describe the hairstyle you want, and the app returns an AI-gene
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 src/
@@ -50,7 +50,7 @@ src/
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 Make sure you have the following installed:
 
@@ -62,7 +62,7 @@ Make sure you have the following installed:
 
 ---
 
-## 📦 Installation and Setup
+## Installation and Setup
 
 ### 1. Clone the repository
 
@@ -107,7 +107,7 @@ yarn start
 
 ---
 
-## 🔄 How It Works
+## How It Works
 
 1. The user uploads a photo (camera or gallery) and enters a prompt describing the desired hairstyle.
 2. The photo is converted to a base64 string and sent to the `POST /api/hair` server route.
@@ -116,7 +116,7 @@ yarn start
 
 ---
 
-## 🧪 Scripts
+## Scripts
 
 | Command | Description |
 | --- | --- |
@@ -129,7 +129,7 @@ yarn start
 
 ---
 
-## 🚀 Deployment (EAS Workflows)
+## Deployment (EAS Workflows)
 
 Builds and deploys are automated through EAS workflows in `.eas/workflows/`, triggered by branch:
 
