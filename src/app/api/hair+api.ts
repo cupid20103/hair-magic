@@ -9,7 +9,7 @@ export async function POST(req: Request) {
         "ddfc2b08d209f9fa8c1eca692712918bd449f695dabb4a958da31802a9570fe4",
       input: {
         prompt: `A photo of a current person img with ${prompt} hair style`,
-        input_image: input_image,
+        input_image,
       },
     };
 

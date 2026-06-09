@@ -138,11 +138,11 @@ const AppScreen: React.FC = () => {
             </View>
           ) : (
             <Pressable onPress={handleClear}>
-              {!isDarkMode ? (
-                <Feather name="arrow-left" size={24} color="black" />
-              ) : (
-                <Feather name="arrow-left" size={24} color="white" />
-              )}
+              <Feather
+                name="arrow-left"
+                size={24}
+                color={isDarkMode ? "white" : "black"}
+              />
             </Pressable>
           )}
           {!isEmpty(result) && (
