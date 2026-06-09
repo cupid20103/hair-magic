@@ -26,6 +26,16 @@ export async function POST(req: Request) {
     const prediction = await response.json();
     const predictionID = prediction.id;
 
+    if (!predictionID) {
+      return new Response(
+        JSON.stringify({ error: "Failed to process image" }),
+        {
+          status: 500,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
+
     const MAX_ATTEMPTS = 10;
     let attempts = 0;
     let result;

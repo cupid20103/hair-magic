@@ -24,7 +24,7 @@ export const toast = ({
 };
 
 export const isEmpty = (value: any) => {
-  if (value === null || value === undefined || Number.isNaN(value)) {
+  if (value === null || value === undefined) {
     return true;
   }
 
@@ -40,10 +40,6 @@ export const isEmpty = (value: any) => {
     return true;
   }
 
-  if (typeof value === "number" && value === 0) {
-    return true;
-  }
-
   return false;
 };
 
@@ -53,7 +49,10 @@ export const imageToBase64 = async (uri: string) => {
       encoding: FileSystem.EncodingType.Base64,
     });
 
-    return `data:application/octet-stream;base64,${base64}`;
+    const extension = uri.split(".").pop()?.toLowerCase();
+    const mimeType = extension === "png" ? "image/png" : "image/jpeg";
+
+    return `data:${mimeType};base64,${base64}`;
   } catch (error) {
     console.error("Error converting image to Base64: ", error);
     throw error;
